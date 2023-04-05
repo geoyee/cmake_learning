@@ -12,10 +12,10 @@
 1. 在`t1`示例中，使用`SET`创建变量后，使用时应该加上`${}`：
 
 ``` cmake
-SET(SRC_LIST main.c)
+SET(SRC_FILES main.c)
 
-# ADD_EXECUTABLE(hello SRC_LIST)  # 报错找不到SRC_LIST
-ADD_EXECUTABLE(hello ${SRC_LIST})  # 可以使用
+# ADD_EXECUTABLE(hello SRC_FILES)  # 报错找不到SRC_FILES
+ADD_EXECUTABLE(hello ${SRC_FILES})  # 可以使用
 ```
 
 2. 在`t2`示例中，首先`runhello.sh`中的执行二进制文件前面需要加上当前路径：
