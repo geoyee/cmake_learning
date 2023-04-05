@@ -22,7 +22,7 @@ ADD_EXECUTABLE(hello ${SRC_FILES})  # 可以使用
 
 ``` shell
 # hello  # 无法运行
-./hello
+./hello  # 可以使用
 ```
 
 3. 在`t2`的示例中，需要在`src/CMakeLists.txt`中添加`INSTALL`，否则在安装时无法把对应的二进制文件安装到与`runhello.sh`同目录下：
