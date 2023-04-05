@@ -22,3 +22,17 @@ cmake -DCMAKE_INSTALL_PREFIX=/tmp/t2/usr ..
 make
 make install
 ```
+
+## 使用
+
+1. 进入安装完成的目录
+
+``` shell
+cd /tmp/t2/usr/bin
+```
+
+2. 执行脚本
+
+``` shell
+./runhello.sh
+```
