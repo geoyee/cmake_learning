@@ -1,0 +1,12 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.20 FATAL_ERROR)
+
+PROJECT(hello)
+
+# 安装copyright和readme
+INSTALL(FILES COPYRIGHT README.md DESTINATION share/doc/cmake/t2)
+# 安装shell
+INSTALL(PROGRAMS runhello.sh DESTINATION bin)
+# 安装doc目录下的文件
+INSTALL(DIRECTORY doc/ DESTINATION share/doc/cmake/t2)
+
+ADD_SUBDIRECTORY(src bin)
