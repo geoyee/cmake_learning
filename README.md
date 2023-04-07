@@ -31,3 +31,9 @@ ADD_EXECUTABLE(hello ${SRC_FILES})  # 可以使用
 # 添加如下这句
 INSTALL(TARGETS hello DESTINATION bin)
 ```
+
+4. 在`t4`的示例中，`usr`文件夹来自`t3`示例安装的库，在`t3`的安装中使用了如下命令：
+``` shell
+cmake -DCMAKE_INSTALL_PREFIX=~/cmake_learning/t4/usr ..
+make && make install
+```
