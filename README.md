@@ -37,3 +37,11 @@ INSTALL(TARGETS hello DESTINATION bin)
 cmake -DCMAKE_INSTALL_PREFIX=~/cmake_learning/t4/usr ..
 make && make install
 ```
+
+5. 在`t6`的示例中，使用`FIND_LIBRARY`时对于库没有指定后缀将找不到，如下：
+``` cmake
+# 找不到HELLO_LIBRARY
+FIND_LIBRARY(HELLO_LIBRARY NAMES hello PATH /usr/lib /usr/local/lib)
+# 指定查找动态链接库则可以找到
+FIND_LIBRARY(HELLO_LIBRARY NAMES libhello.so PATH /usr/lib /usr/local/lib)
+```
