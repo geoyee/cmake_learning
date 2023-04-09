@@ -45,3 +45,9 @@ FIND_LIBRARY(HELLO_LIBRARY NAMES hello PATH /usr/lib /usr/local/lib)
 # 指定查找动态链接库则可以找到
 FIND_LIBRARY(HELLO_LIBRARY NAMES libhello.so PATH /usr/lib /usr/local/lib)
 ```
+
+6. 在`t6`的示例中，查找库路径时添加了`t4`的`usr`路径，确保`hello.h`和`libhello.so`能够找到:
+``` cmake
+# FIND_PATH 的最后添加 ../../t4/usr/include/hello
+# FIND_LIBRARY 的最后添加 ../../t4/usr/lib
+```
