@@ -1,11 +1,6 @@
-# cmake_learning
+# cmake practice
 
-学习[**CMake Practice.pdf**](./CMake%20Practice.pdf)的入门记录。
-
-## 环境
-
-- 系统：WLS Ubuntu 22.04.2 LTS
-- cmake版本：3.25.0
+学习[**CMake Practice.pdf**](./CMake_Practice.pdf)的入门记录。
 
 ## 说明
 
