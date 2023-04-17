@@ -9,4 +9,4 @@
 
 - [CMake Practice](./cmake_practice)
 - [CMake Handbook](./cmake_handbook)
-
+- [CMake Rules](./docs/CMake_Rules.md)
