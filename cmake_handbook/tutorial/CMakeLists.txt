@@ -1,0 +1,18 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6 FATAL_ERROR)
+
+PROJECT(sqrt)
+
+# 设置版本号
+SET(PROJECT_VERSION_MAJOR 1)
+SET(PROJECT_VERSION_MINOR 0)
+
+# 配置一个头文件，通过该文件向源码传递CMake设置
+CONFIGURE_FILE(
+	"${PROJECT_SOURCE_DIR}/ProjectConfig.h.in"
+	"${PROJECT_BINARY_DIR}/ProjectConfig.h"
+)
+
+# 将二进制的文件树包含到文件的搜索路径中，这样才能找到ProjrctConfig.h
+INCLUDE_DIRECTORIES("${PROJECT_BINARY_DIR}")
+
+ADD_EXECUTABLE(sqrt sqrt.cpp)

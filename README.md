@@ -7,6 +7,6 @@
 
 ## 资源
 
-- [cmake practice](./cmake_practice)
-- [cmake handbook](./cmake_handbook)
+- [CMake Practice](./cmake_practice)
+- [CMake Handbook](./cmake_handbook)
 

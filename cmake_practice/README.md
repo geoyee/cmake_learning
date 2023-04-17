@@ -1,4 +1,4 @@
-# cmake practice
+# CMake Practice
 
 学习[**CMake Practice.pdf**](./CMake_Practice.pdf)的入门记录。
 
