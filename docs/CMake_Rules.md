@@ -41,5 +41,32 @@ SET(SRC_LIST main.cpp;hello.cpp)
 	- 外部构建（Out-source）：编译过程文件在指定文件夹内，在工程目录下新建文件夹，如`build`，进入`build`后执行`cmake ..`即为外部构建。通常建议使用外部构建。
 
 4. 常用变量及指令：
+   - CMake变量
 
-*...*
+| 语句 | 注释 |
+| ---- | ---- |
+| `PROJECT_BINARY_DIR` / `CMAKE_BINARY_DIR` / `<project_name>_BINARY_DIR` | 工程目标文件目录 |
+| `PROJECT_SOURCE_DIR` / `CMAKE_SOURCE_DIR` / `<project_name>_SOURCE_DIR` | 工程源文件目录 |
+| `CMAKE_CURRENT_BINARY_DIR` / `CMAKE_CURRENT_SOURCE_DIR` | 当前`CMakeLists.txt`所在的路径 |
+| `CMAKE_CURRENT_LIST_FILE` | 输出调用这个变量的`CMakeLists.txt`的路径 |
+| `CMAKE_CURRENT_LIST_LINE` | 输出调用这个变量的`CMakeLists.txt`的行号 |
+| `EXECUTABLE_OUTPUT_PATH` | 二进制目标文件的输出路径 |
+| `LIBRARY_OUTPUT_PATH` | 库目标文件的输出路径 |
+| `CMAKE_INSTALL_PREFIX` | 目标文件的安装路径，默认为`usr/local/bin` |
+| `CMAKE_MODULE_PATH` | 定义自己的CMake模块所在路径 |
+| `PROJECT_NAME` | 通过`PROJECT`指令指定的项目名称 |
+| `CMAKE_INCLUDE_CURRENT_DIR` | 自动添加`CMAKE_CURRENT_BINARY_DIR`和`CMAKE_CURRENT_SOURCE_DIR`到当前的`CMakeLists.txt`处理 |
+| `CMAKE_INCLLUDE_DIRECTORIES_PROJECT_BEFORE` | 将工程提供的头文件目录始终置于系统头文件目录之前 |
+| `CMAKE_MAJOR_VERSION` | CMake的主版本号 |
+| `CMAKE_MINOR_VERSION` | CMake的次版本号 |
+| `CMAKE_PATCH_VERSION` | CMake的补丁等级号 |
+| `CMAKE_SYSTEM` | 系统全称 |
+| `CMAKE_SYSTEM_NAME` | 系统名称 |
+| `CMAKE_SYSTEM_VERSION` | 系统版本号 |
+| `CMAKE_SYSTEM_PROCESSOR` | 系统处理器型号 |
+| `UNIX` | 在所有的UNIX平台为TRUE，包括MacOS和Cygwin |
+| `WIN32` | 在所有的WIN32平台为TRUE，包括Cygwin |
+| `CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS` | 控制IF ELSE书写方式的开关选项 |
+| `BUILD_SHARED_LIBS` | 构建动态库的开关，默认为关闭（即构建静态库） |
+| `CMAKE_C_FLAGS` | C编译选项 |
+| `CMAKE_CXX_FLAGS` | C++编译选项 |
