@@ -1,5 +1,5 @@
 #include <cmath>
-#include "mysqrt.h"
+#include "MathFunctions.h"
 
 double mysqrt(const char* val)
 {

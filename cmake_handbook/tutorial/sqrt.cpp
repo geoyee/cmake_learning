@@ -4,7 +4,7 @@
 
 // 是否使用自己的数据库
 #ifdef USE_MYMATH
-#include "MathFunctions/mysqrt.h"
+#include "MathFunctions.h"
 #endif
 
 int main(int argc, char** argv)
