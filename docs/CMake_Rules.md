@@ -42,7 +42,7 @@ SET(SRC_LIST main.cpp;hello.cpp)
 
 4. 常用变量及指令：
 
-	- CMake变量
+- CMake变量
 
 | 语句 | 注释 |
 | ---- | ---- |
@@ -72,7 +72,7 @@ SET(SRC_LIST main.cpp;hello.cpp)
 | `CMAKE_C_FLAGS` | C编译选项 |
 | `CMAKE_CXX_FLAGS` | C++编译选项 |
 
-	- CMake指令
+- CMake指令
 
 | 语句 | 注释 |
 | ---- | ---- |
