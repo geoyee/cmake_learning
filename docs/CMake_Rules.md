@@ -41,7 +41,8 @@ SET(SRC_LIST main.cpp;hello.cpp)
 	- 外部构建（Out-source）：编译过程文件在指定文件夹内，在工程目录下新建文件夹，如`build`，进入`build`后执行`cmake ..`即为外部构建。通常建议使用外部构建。
 
 4. 常用变量及指令：
-   - CMake变量
+
+	- CMake变量
 
 | 语句 | 注释 |
 | ---- | ---- |
@@ -70,3 +71,21 @@ SET(SRC_LIST main.cpp;hello.cpp)
 | `BUILD_SHARED_LIBS` | 构建动态库的开关，默认为关闭（即构建静态库） |
 | `CMAKE_C_FLAGS` | C编译选项 |
 | `CMAKE_CXX_FLAGS` | C++编译选项 |
+
+	- CMake指令
+
+| 语句 | 注释 |
+| ---- | ---- |
+| `PROJECT(<project_name>)` | 定义工程名，定义后自动添加两个变量`<project_name>_BINARY_DIR`和`<project_name>_SOURCE_DIR` |
+| `SET(<var> <values>)` | 自定义变量，`<values>`可以是多个 |
+| `MESSAGE([SEND_ERROR|STATUS|FATAL_ERROR] <message>)` | 输出消息，其中`SEND_ERROR`表示产生错误但跳过，`STATUS`表示输出一般信息，`FATAL_ERROR`则立即终止所有CMake过程 |
+| `ADD_EXECUTABLE(<target> <source_file>)` | 增加可执行文件，由所有的`<source_file>`生成 |
+| `ADD_SUBDIRECTORY(<source_dir>)` | 增加子目录 |
+| `SUBDIRS(<dirs>)` | 一次性添加多个目录，即使外部编译，子目录体系依然被保存 |
+| `INSTALL(TARGETS <targets> [ARCHIVE|LIBRARY|RUNTIME] [DESTINATION <dir>] [CONFIGGURATIONS [DUBUG|RELEASE]] [...])` | 安装目标文件，其中`ARCHIVE`为静态库，`LIBRARY`为动态库，`RUNTIME`为可执行文件 |
+| `INSTALL(FILES <files> [DESTINATION <dir>] [CONFIGGURATIONS [DUBUG|RELEASE]] [...])` | 安装普通文件，默认为644权限 |
+| `INSTALL(DIRECTORY <dirs> [DESTINATION <dir>] [CONFIGGURATIONS [DUBUG|RELEASE]] [...])` | 安装目录，默认为644权限 |
+| `ADD_LIBRARY(<lib_name> [SHARED|STATIC|MODULE] <sources>)` | 添加库，其中`MODULE`在使用dydl的系统有效，如果不支持dydl，默认为`SHARED` |
+| `SET_TARGET_PROPERTIES(<targets> PROPERTIES <props and values>)` | 设置目标输出的名字和属性，由于TARGET名字不能重复，因此需要这个指令改名 |
+| `GET_TARGET_PROPERTIES(<var> <target> <prop>)` | 获取目标的属性保存在变量中 |
+| ... | ... |
