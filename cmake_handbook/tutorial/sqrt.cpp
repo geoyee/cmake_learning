@@ -15,12 +15,12 @@ int main(int argc, char** argv)
 		std::cerr << "Usage: " << argv[0] << " number" << std::endl;
 		return 1;
 	}
-	double inputValue = atof(argv[1]);
 #ifdef USE_MYMATH
 	double outputValue = mysqrt(argv[1]);
 #else
+	double inputValue = atof(argv[1]);
 	double outputValue = sqrt(inputValue);
 #endif
-	std::cout << "The square root of " << inputValue << " is " << outputValue << std::endl;
+	std::cout << "The square root of " << argv[1] << " is " << outputValue << std::endl;
 	return 0;
 }
