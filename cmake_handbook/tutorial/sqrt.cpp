@@ -16,8 +16,10 @@ int main(int argc, char** argv)
 		return 1;
 	}
 #ifdef USE_MYMATH
+	std::cout << "[sqrt] Use mysqrt" << std::endl;
 	double outputValue = mysqrt(argv[1]);
 #else
+	std::cout << "[sqrt] Use atof and sqrt" << std::endl;
 	double inputValue = atof(argv[1]);
 	double outputValue = sqrt(inputValue);
 #endif
