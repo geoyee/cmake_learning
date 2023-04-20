@@ -102,7 +102,7 @@ SET(SRC_LIST main.cpp;hello.cpp)
 | `FILE(COPY <file_name> DESTINATION <dir>)` | 复制文件 |
 | `FILE([REMOVE\|REMOVE_RECURSE] <dirs>)` | 移除/递归移除目录 |
 | `FILE(MAKE_DIRECTORY <dir>)` | 创建目录 |
-| `FILE([GLOB/|GLOB_RECURSE] <path> <globbing-expression>)` | 匹配/递归匹配规则在指定的目录内匹配到所需要的文件 |
+| `FILE([GLOB\|GLOB_RECURSE] <path> <globbing-expression>)` | 匹配/递归匹配规则在指定的目录内匹配到所需要的文件 |
 | `INCLUDE([<file>\|<model>] [OPTIONAL])` | 用于载入`CMakeLists.txt`文件或CMake模块 |
 | `FIND_FILE(<names> <path>)` | 查找文件 |
 | `FIND_LIBRARY(<names> <path>)` | 查找库 |
