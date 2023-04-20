@@ -17,6 +17,6 @@ CMake Error at cmake_install.cmake:xx (file):
 
 2. 步骤4中的查找方法存在问题：
 
-	- 首先`CHECK_FUNCTION_EXISTS`不适用，因为`log`和`exp`在多数平台上是内内联函数，在链接时无法检测到它们，需要使用`CHECK_SYMBOL_EXISTS`。
+	- 首先`CHECK_FUNCTION_EXISTS`不适用，因为`log`和`exp`在多数平台上是内联函数，在链接时无法检测到它们，需要使用`CHECK_SYMBOL_EXISTS`。
 
 	- 直接使用`CHECK_SYMBOL_EXISTS`代替`CHECK_FUNCTION_EXISTS`并指定为查找`math.h`依旧找不到这两个函数，具体可以参考[这篇博客](https://zhuanlan.zhihu.com/p/525830239)进行修改。
