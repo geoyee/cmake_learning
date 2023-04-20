@@ -88,4 +88,26 @@ SET(SRC_LIST main.cpp;hello.cpp)
 | `ADD_LIBRARY(<lib_name> [SHARED\|STATIC\|MODULE] <sources>)` | 添加库，其中`MODULE`在使用dydl的系统有效，如果不支持dydl，默认为`SHARED` |
 | `SET_TARGET_PROPERTIES(<targets> PROPERTIES <props and values>)` | 设置目标输出的名字和属性，由于TARGET名字不能重复，因此需要这个指令改名 |
 | `GET_TARGET_PROPERTIES(<var> <target> <prop>)` | 获取目标的属性保存在变量中 |
-| ... | ... |
+| `$ENV{NAME}` | 调用系统环境变量 |
+| `SET(ENV{NAME} <var>)` | 设置环境变量 |
+| `ADD_DEFINITIONS(-D...)` | 向编译器添加-D定义 |
+| `ADD_DEFINITIONS(<targer_name> <depend_targets>)` | 定义`<target>`依赖的其他`<target>` |
+| `ADD_TEST(<test_name> <program> <args>)` | 添加测试，在启用`ENABEL_TESTING`后起效 |
+| `ENABEL_TESTING` | 控制是否构建测试 |
+| `AUX_SOURCE_DIRECTORY(<dir> <var>)` | 自动构建源文件列表 |
+| `CMAKE_MINIMUM_REQUIRED(VERSION <version> [FATAL_ERROR])` | 检测CMake版本，不满足就提示或报错 |
+| `EXEC_PROGRAM(<program> [ARGS <args>] [OUTPUT_VARIABLE <var>] [RETURN_VALUE <value>])` | 在文件夹运行某个程序 |
+| `FILE([WRITE\|APPEND] <file_name> <text>)` | 写/追加文件 |
+| `FILE(READ <file_name> <value>)` | 读文件 |
+| `FILE(COPY <file_name> DESTINATION <dir>)` | 复制文件 |
+| `FILE([REMOVE\|REMOVE_RECURSE] <dirs>)` | 移除/递归移除目录 |
+| `FILE(MAKE_DIRECTORY <dir>)` | 创建目录 |
+| `FILE([GLOB/|GLOB_RECURSE] <path> <globbing-expression>)` | 匹配/递归匹配规则在指定的目录内匹配到所需要的文件 |
+| `INCLUDE([<file>\|<model>] [OPTIONAL])` | 用于载入`CMakeLists.txt`文件或CMake模块 |
+| `FIND_FILE(<names> <path>)` | 查找文件 |
+| `FIND_LIBRARY(<names> <path>)` | 查找库 |
+| `FIND_PATH(<names> <path>)` | 查找路径 |
+| `FIND_PROGRAM(<names> <path>)` | 查找程序 |
+| `FIND_PACKAGE(<name> [<version>] [EXACT] [QUIET] [MODULE] [REQUIRED\|COMPONENTS] [components...])` | 查找第三方包 |
+
+
