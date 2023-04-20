@@ -1,4 +1,4 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6 FATAL_ERROR)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0.2 FATAL_ERROR)
 
 PROJECT(sqrt)
 
@@ -14,6 +14,12 @@ IF(USE_MYMATH)
 	# 需要的都放在`EXTRA_LIBS`中
 	SET(EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
 ENDIF(USE_MYMATH)
+
+# 检查当前平台提供了log和exp函数吗
+# CheckFunctionExists无法找到，需要在CMake3.0.2以上使用CheckSymbolExists
+INCLUDE(CheckSymbolExists)
+CHECK_SYMBOL_EXISTS(log "math.h" HAVE_LOG)
+CHECK_SYMBOL_EXISTS(exp "math.h" HAVE_EXP)
 
 # 配置一个头文件，通过该文件向源码传递CMake设置
 CONFIGURE_FILE(

@@ -1,3 +1,7 @@
 #define PROJECT_VERSION_MAJOR 2
 #define PROJECT_VERSION_MINOR 0
+
 #define USE_MYMATH
+
+#define HAVE_LOG
+#define HAVE_EXP
