@@ -110,4 +110,46 @@ SET(SRC_LIST main.cpp;hello.cpp)
 | `FIND_PROGRAM(<names> <path>)` | 查找程序 |
 | `FIND_PACKAGE(<name> [<version>] [EXACT] [QUIET] [MODULE] [REQUIRED\|COMPONENTS] [components...])` | 查找第三方包 |
 
+5. 控制语句
 
+- 判断语句
+
+``` cmake
+# 基本语法
+IF(...)
+	...
+ELSEIF(...)
+	...
+ELSE(...)
+	...
+ENDIF(...)
+
+# 简化使用
+SET(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS ON)
+
+IF(...)
+	...
+ELSEIF()
+	...
+ELSE()
+	...
+ENDIF()
+
+# 表达式
+IF(<var>)  # 当<var>不为空/0/N/NO/OFF/FALSE/NOTFOUND/<var>_NOTFOUND时为真
+IF(NOT <var>)  # 与上述条件相反
+IF(<var1> AND/OR <var2>)  # 懂的都懂
+IF(COMMAND <cmd>)  # 当<cmd>为命令并可以调用时为真
+IF(EXITS <file/dir>)  # 当文件或路径存在为真
+IF(<file1> IS_NEWER_THAN <file2>)  # 当<file1>比<file2>新或其中一个不存在时为真
+IF(IS_DIRECTORY <dir_name>)  # 当<dir_name>为目录时为真
+IF(<var/str> MATCHES <regex>)  # 当变量或字符能匹配正则表达式为真
+IF(DEFINED <var>)  # 当<var>被定义为真
+# 数字/字母顺序比较
+IF(<var/str> LESS <number>)  # 小于
+IF(<var/str> GREATER <number>)  # 大于
+IF(<var/str> EQUAL <number>)  # 等于
+IF(<var/str> STRLESS <str>)  # 小于
+IF(<var/str> STRGREATER <str>)  # 大于
+IF(<var/str> STREQUAL <str>)  # 等于
+```
