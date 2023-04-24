@@ -1,6 +1,19 @@
+# 添加生成表的可执行文件
+ADD_EXECUTABLE(MakeTable MakeTable.cpp)
+# 添加生成源代码的命令
+ADD_CUSTOM_COMMAND(
+	OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/Table.h
+	DEPENDS MakeTable
+	COMMAND MakeTable ${CMAKE_CURRENT_BINARY_DIR}/Table.h
+)
+# 为包含文件向搜索路径中添加二进制树目录
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
+
 SET(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS ON)
 
-ADD_LIBRARY(MathFunctions mysqrt.cpp)
+ADD_LIBRARY(
+	MathFunctions mysqrt.cpp ${CMAKE_CURRENT_BINARY_DIR}/Table.h
+)
 
 # 检查当前平台提供了log和exp函数吗
 # CheckFunctionExists无法找到，需要在CMake3.0.2以上使用CheckSymbolExists
