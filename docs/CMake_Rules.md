@@ -153,3 +153,28 @@ IF(<var/str> STRLESS <str>)  # 小于
 IF(<var/str> STRGREATER <str>)  # 大于
 IF(<var/str> STREQUAL <str>)  # 等于
 ```
+
+- 循环语句
+
+``` cmake
+# while基本语法
+WHILE(<condition>)
+	...
+ENDWHILE(<condition>)
+
+# for each基本语法
+# 遍历列表
+FOREACH(<loop_var> <args>)
+	...
+ENDFOREACH(<loop_var>)
+
+# 遍历范围
+FOREACH(<loop_var> RANGE <total>)
+	...
+FOREACH(<loop_var>)
+
+# 步进遍历范围
+FOREACH(<loop_var> RANGE <start> <stop> [<step>])
+	...
+FOREACH(<loop_var>)
+```
